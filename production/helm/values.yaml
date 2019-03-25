@@ -51,7 +51,7 @@ loki:
     #   memory: 128Mi
 
   securityContext:
-    readOnlyRootFilesystem: true
+    fsGroup: 10001
     runAsGroup: 10001
     runAsNonRoot: true
     runAsUser: 10001
@@ -165,10 +165,6 @@ promtail:
     - name: docker
       mountPath: /var/lib/docker/containers
       readOnly: true
-
-  readinessProbe: null
-
-  livenessProbe: null
 
   resources: {}
   #  limits:
